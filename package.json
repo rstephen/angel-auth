@@ -1,0 +1,49 @@
+{
+  "name": "ryan-auth",
+  "version": "1.0.0",
+  "description": "Redux/Axios rotating token auth support",
+  "main": "dist/index.js",
+  "repository": "git@github.com:rstephen/ryan-auth.git",
+  "author": "Ryan Stephens <rlstephens@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "keywords": [
+    "devise-token-auth",
+    "authentication",
+    "redux"
+  ],
+  "scripts": {
+    "build": "webpack --mode production",
+    "prepublish": "rm -rf ./dist && yarn build",
+    "test": "jest --watch"
+  },
+  "peerDependencies": {
+    "redux": ">=4.0.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/plugin-proposal-export-default-from": "^7.7.4",
+    "@babel/plugin-proposal-export-namespace-from": "^7.7.4",
+    "@babel/preset-env": "^7.7.1",
+    "babel-jest": "^24.9.0",
+    "babel-loader": "^8.0.6",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "jest": "^24.9.0",
+    "moxios": "^0.4.0",
+    "redux": ">=4.0.4",
+    "redux-mock-store": "^1.5.3",
+    "redux-thunk": "^2.3.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "axios": ">=0.18.1",
+    "browser-cookies": "^1.2.0"
+  }
+}

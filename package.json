@@ -1,9 +1,9 @@
 {
-  "name": "ryan-auth",
+  "name": "angel-auth",
   "version": "0.0.2",
   "description": "Redux/Axios rotating token auth support",
   "main": "dist/index.js",
-  "repository": "git@github.com:rstephen/ryan-auth.git",
+  "repository": "git@github.com:rstephen/angel-auth.git",
   "author": "Ryan Stephens <rlstephens@gmail.com>",
   "license": "MIT",
   "private": false,

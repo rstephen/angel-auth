@@ -20,4 +20,8 @@ module.exports = {
   resolve: {
     extensions: ['.js'],
   },
+  externals: {
+    axios: 'axios',
+    redux: 'redux',
+  },
 };

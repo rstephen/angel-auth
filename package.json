@@ -1,6 +1,6 @@
 {
   "name": "angel-auth",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Redux/Axios rotating token auth support",
   "main": "dist/index.js",
   "repository": "git@github.com:rstephen/angel-auth.git",

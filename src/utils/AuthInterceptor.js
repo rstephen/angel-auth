@@ -16,7 +16,6 @@ const getAuthHeaders = async (url) => {
   if (isApiRequest(url)) {
     // fetch current auth headers from storage
     const currentHeaders = await retrieveData(SAVED_CREDS_KEY) || {};
-    console.log('currentHeaders', currentHeaders)
     const nextHeaders = {};
 
     // bust IE cache
@@ -75,7 +74,6 @@ const configureInterceptor = () => {
 
   axios.interceptors.request.use(async (request) => {
     const headers = await getAuthHeaders(request.url);
-    console.log(request.method, request.url, headers)
     Object.assign(request.headers, headers);
     return request;
   }, (error) => (

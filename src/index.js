@@ -8,5 +8,7 @@ export signUp from './actions/SignUpAction';
 export refreshUser from './actions/RefreshUserAction';
 export resetPassword from './actions/ResetPasswordAction';
 export forgotPassword from './actions/ForgotPasswordAction';
+export { oAuthSignInStart, oAuthSignInComplete, oAuthSignInError } from './actions/OAuthAction';
+export { getOAuthUrl } from './utils/SessionStorage';
 
 export default axios;

@@ -73,9 +73,8 @@ export const getPasswordUpdateUrl = () => `${root.authState.configuration.apiPat
 
 export const getTokenValidationUrl = () => `${root.authState.configuration.apiPath}${root.authState.configuration.tokenValidationPath}?unbatch=true`;
 
-export const getOAuthUrl = ({ provider, params }) => {
-  let oAuthUrl = `${root.authState.configuration.apiPath}${root.authState.configuration.authProviderPaths[provider]}?auth_origin_url=${encodeURIComponent(root.location.href)}&config_name=default`;
-
+export const getOAuthUrl = (provider, params) => {
+  let oAuthUrl = `${getApiUrl()}${root.authState.configuration.apiPath}${root.authState.configuration.authProviderPaths[provider]}?auth_origin_url=${encodeURIComponent(root.location.href)}&config_name=default`;
   if (params) {
     Object.keys(params).forEach((key) => {
       oAuthUrl += '&';
@@ -105,7 +104,6 @@ export const persistData = async (key, val) => {
   if (typeof root.authState.configuration.storage !== 'string') {
     await root.authState.configuration.storage.setItem(key, json);
   } else {
-    console.log('config', root.authState.configuration);
     switch (root.authState.configuration.storage) {
       case 'localStorage':
         root.localStorage.setItem(key, json);
@@ -134,7 +132,6 @@ export const retrieveData = async (key, storage) => {
         break;
     }
   }
-  console.log('got vals', val);
   // if value is a simple string, the parser will fail. in that case, simply
   // unescape the quotes and return the string.
   try {

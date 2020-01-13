@@ -21,7 +21,6 @@ const configureAuth = (config) => async (dispatch) => {
 
   // Look up auth creds from persistent storage
   const creds = await retrieveData(SAVED_CREDS_KEY);
-  console.log('creds', creds);
   // If creds, call validate token
   return creds ? dispatch(refreshUser()) : Promise.resolve();
 };

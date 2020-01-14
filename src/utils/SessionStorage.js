@@ -113,7 +113,7 @@ export const persistData = async (key, val) => {
         root.localStorage.setItem(key, json);
         break;
       default:
-        Cookies.set(key, json, { ...root.authState.currentSettings.cookieProps });
+        Cookies.set(key, json, { ...root.authState.configuration.cookieProps });
         break;
     }
   }

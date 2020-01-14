@@ -30,6 +30,10 @@ const defaultConfig = {
     expiry: '{{ expiry }}',
     uid: '{{ uid }}',
   },
+  cookieProps: {
+    path: '/',
+    expires: 14,
+  },
 };
 
 export const setConfiguration = (s) => {
@@ -109,10 +113,7 @@ export const persistData = async (key, val) => {
         root.localStorage.setItem(key, json);
         break;
       default:
-        Cookies.set(key, json, {
-          expires: root.authState.configuration.cookieExpiry,
-          path: root.authState.configuration.cookiePath,
-        });
+        Cookies.set(key, json, { ...root.authState.currentSettings.cookieProps });
         break;
     }
   }

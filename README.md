@@ -1,4 +1,4 @@
-# angel-auth
+# EXERCISE YOUR AUTH DEMONS WITH ANGEL-AUTH
 
 Takes great inspiration from [redux-auth](https://github.com/lynndylanhurley/redux-auth).
 

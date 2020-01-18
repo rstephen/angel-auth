@@ -1,6 +1,6 @@
 {
   "name": "angel-auth",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Redux/Axios rotating token auth support",
   "main": "dist/index.js",
   "repository": "git@github.com:rstephen/angel-auth.git",
@@ -27,6 +27,7 @@
     "@babel/plugin-proposal-export-default-from": "^7.7.4",
     "@babel/plugin-proposal-export-namespace-from": "^7.7.4",
     "@babel/preset-env": "^7.7.1",
+    "axios": ">=0.18.1",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "eslint": "^6.6.0",
@@ -37,7 +38,6 @@
     "eslint-plugin-react-hooks": "^1.7.0",
     "jest": "^24.9.0",
     "moxios": "^0.4.0",
-    "axios": ">=0.18.1",
     "redux": ">=4.0.4",
     "redux-mock-store": "^1.5.3",
     "redux-thunk": "^2.3.0",

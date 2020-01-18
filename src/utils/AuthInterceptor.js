@@ -34,7 +34,7 @@ const getAuthHeaders = async (url) => {
 
 const updateAuthCredentials = (resp) => {
   // check config apiUrl matches the current response url
-  if (resp && resp.config && isApiRequest(resp.config.url)) {
+  if (resp && resp.headers && resp.config && isApiRequest(resp.config.url)) {
     // set header for each key in `tokenFormat` config
     const newHeaders = {};
 

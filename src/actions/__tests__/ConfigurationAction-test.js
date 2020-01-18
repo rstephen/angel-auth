@@ -40,6 +40,10 @@ describe('ConfigurationAction', () => {
             'token-type': 'Bearer',
             uid: '{{ uid }}',
           },
+          cookieProps: {
+            expires: 14,
+            path: '/',
+          },
           ...config,
         },
       },

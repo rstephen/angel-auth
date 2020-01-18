@@ -11,11 +11,11 @@ import {
   AUTH_RESET_PASSWORD_FAILURE,
 } from '../constants/ActionTypes';
 
-const initialState = {
+export const initialState = {
   loading: false,
   valid: false,
   errors: null,
-  user: null,
+  user: {},
   isSignedIn: false,
   passwordResetFailure: false,
 };

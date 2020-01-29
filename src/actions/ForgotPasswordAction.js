@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { getPasswordUpdateUrl } from '../utils/SessionStorage';
+import { getPasswordUpdateUrl, getPasswordResetRedirectUrl } from '../utils/SessionStorage';
 import {
   AUTH_FORGOT_PASSWORD_REQUEST,
   AUTH_FORGOT_PASSWORD_SUCCESS,
@@ -14,7 +14,10 @@ const forgotPasswordFailure = (errors) => ({ type: AUTH_FORGOT_PASSWORD_FAILURE,
 
 const forgotPassword = (info) => (dispatch) => {
   dispatch(forgotPasswordRequest());
-  return axios.post(getPasswordUpdateUrl(), info)
+  return axios.post(
+    getPasswordUpdateUrl(),
+    { ...info, redirect_url: getPasswordResetRedirectUrl() },
+  )
     .then((resp) => dispatch(forgotPasswordSuccess(resp.data)))
     .catch((error) => dispatch(forgotPasswordFailure(error.response.data.errors)));
 };

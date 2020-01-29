@@ -17,6 +17,7 @@ describe('ConfigurationAction', () => {
       apiUrl: 'https://foo.com',
       tokenValidationPath: '/api/auth/validate_token',
       passwordResetPath: '/api/auth/password',
+      passwordResetRedirectPath: 'http://localhost/',
       signInPath: '/api/auth/sign_in',
       signOutPath: '/api/auth/sign_out',
       authProviderPaths: {

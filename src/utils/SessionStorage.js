@@ -17,7 +17,7 @@ const defaultConfig = {
   signInPath: '/auth/sign_in',
   signUpPath: '/auth',
   passwordResetPath: '/auth/password',
-  passwordResetRedirectPath: root.location && root.location.href ? root.location.href : '/',
+  passwordResetRedirectPath: null,
   passwordUpdatePath: '/auth/password',
   authProviderPaths: {
     linkedin: '/auth/linkedin',
@@ -78,7 +78,19 @@ export const getPasswordUpdateUrl = () => `${root.authState.configuration.apiPat
 
 export const getTokenValidationUrl = () => `${root.authState.configuration.apiPath}${root.authState.configuration.tokenValidationPath}?unbatch=true`;
 
-export const getPasswordResetRedirectUrl = () => `${root.authState.configuration.passwordResetRedirectPath}`;
+export const getPasswordResetRedirectUrl = () => {
+  let path = '/reset';
+
+  if (root.authState.configuration.passwordResetRedirectPath) {
+    path = `${root.authState.configuration.apiPath}${root.authState.configuration.passwordResetRedirectPath}`;
+  }
+
+  if (root.location && root.location.href) {
+    path = root.location.href;
+  }
+
+  return path;
+};
 
 export const getOAuthUrl = (provider, params) => {
   let oAuthUrl = `${getApiUrl()}${root.authState.configuration.apiPath}${root.authState.configuration.authProviderPaths[provider]}?auth_origin_url=${encodeURIComponent(root.location.href)}&config_name=default`;

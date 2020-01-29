@@ -15,7 +15,7 @@ const resetPasswordFailure = (errors) => ({ type: AUTH_RESET_PASSWORD_FAILURE, e
 const resetPassword = (info) => (dispatch) => {
   dispatch(resetPasswordRequest());
   return axios.put(getPasswordResetRequestUrl(), info)
-    .then((resp) => dispatch(resetPasswordSuccess(resp.data)))
+    .then((resp) => dispatch(resetPasswordSuccess(resp.data.data)))
     .catch((error) => dispatch(resetPasswordFailure(error.response.data.errors)));
 };
 
